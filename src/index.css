@@ -37,3 +37,38 @@ input{
 .custom-input::placeholder{
   color:gray;
 }
+
+.input-flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  box-shadow: var(--shadow);
+  border-radius: 0.5rem;
+  padding: 0rem 0.5rem;
+}
+
+.input-flex input{
+  width: 100%;
+  padding: 0.5rem;
+  border: 0;
+}
+
+.input-flex input:focus{
+  outline:none !important;
+}
+
+.select-input{
+  width: 30%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+  border-radius: 0.5rem;
+  padding: 0rem 0.5rem;
+}
+
+.select-input >div{
+  border: 0px solid #fff !important;
+}

@@ -11,7 +11,7 @@ function AddIncome({
     return (
         <Modal
             style={{fontWeight: 600}}
-            title= "Add Expense" 
+            title= "Add Income" 
             open={isIncomeModalVisible}
             onCancel={handleIncomeCancel}  
             footer= {null}    
@@ -20,7 +20,7 @@ function AddIncome({
                 layout="vertical"
                 form={form}
                 onFinish={(values) => {
-                    onFinish(values, "expense");
+                    onFinish(values, "income");
                     form.resetFields();
                 }}
             >
@@ -78,9 +78,9 @@ function AddIncome({
                     ]}
                 >
                     <Select className='select-input-2'>
-                        <Select.Option value="salary">Salary</Select.Option>
-                        <Select.Option value="freelance">Freelance</Select.Option>
-                        <Select.Option value="investment">Investment</Select.Option>        
+                        <Select.Option value="Salary">Salary</Select.Option>
+                        <Select.Option value="Freelance">Freelance</Select.Option>
+                        <Select.Option value="Investment">Investment</Select.Option>        
                     </Select> 
                 </Form.Item>
 

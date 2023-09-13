@@ -38,7 +38,13 @@ function Header() {
             </p>
             {
                 user &&
-                <p className='logo link' onClick={handleLogout}>Logout</p>
+                <div style={{display:"flex", alignItems:"center", gap:"0.75rem"}}>
+                    <img 
+                        src={user.photoURL ? user.photoURL : ''}
+                        style={{borderRadius:"50%", height:"1.5rem", width:"1.5rem"}}
+                    />
+                    <p className='logo link' onClick={handleLogout}>Logout</p>
+                </div>
             }
 
         </div>

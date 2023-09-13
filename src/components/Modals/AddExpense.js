@@ -13,7 +13,8 @@ function AddExpense({
             style={{fontWeight: 600}}
             title= "Add Expense" 
             open={isExpenseModalVisible}
-            onCancel={handleExpenseCancel}        
+            onCancel={handleExpenseCancel}  
+            footer = {null}      
         >
             <Form
                 layout="vertical"
@@ -77,9 +78,9 @@ function AddExpense({
                     ]}
                 >
                     <Select className='select-input-2'>
-                        <Select.Option value="salary">Food</Select.Option>
-                        <Select.Option value="freelance">Education</Select.Option>
-                        <Select.Option value="investment">Office</Select.Option>        
+                        <Select.Option value="Food">Food</Select.Option>
+                        <Select.Option value="Education">Education</Select.Option>
+                        <Select.Option value="Office">Office</Select.Option>        
                     </Select> 
                 </Form.Item>
 
