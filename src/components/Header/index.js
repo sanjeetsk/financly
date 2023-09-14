@@ -28,7 +28,7 @@ function Header() {
             });
         }
         catch (e) {
-            toast.error(e.message);
+            toast.error(error);
         }
     }
     return (
