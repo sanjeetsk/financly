@@ -1,6 +1,6 @@
+import { Line, Pie } from '@ant-design/plots';
 import React from 'react'
-import { Line } from '@ant-design/charts';
-import { Pie } from '@ant-design/charts/es';
+
 
 
 function ChartComponent({ sortedTransactions }) {
