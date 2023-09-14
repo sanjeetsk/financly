@@ -5,6 +5,7 @@ import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
+import userpic from '../../assets/user.jpg'
 
 function Header() {
     const [user, loading, error] = useAuthState(auth);
@@ -40,7 +41,7 @@ function Header() {
                 user &&
                 <div style={{display:"flex", alignItems:"center", gap:"0.75rem"}}>
                     <img 
-                        src={user.photoURL ? user.photoURL : ''}
+                        src={user.photoURL ? user.photoURL : userpic }
                         style={{borderRadius:"50%", height:"1.5rem", width:"1.5rem"}}
                     />
                     <p className='logo link' onClick={handleLogout}>Logout</p>

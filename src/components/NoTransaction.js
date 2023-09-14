@@ -1,4 +1,5 @@
 import React from 'react'
+import nodata from '../assets/nodata.png'
 
 function NoTransaction() {
   return (
@@ -10,7 +11,7 @@ function NoTransaction() {
         flexDirection:"column",
         marginBottom:"2rem"
     }}>
-      <img src='' style={{width:"400px", margin:"4rem"}}/>
+      <img src={nodata} style={{width:"400px", margin:"4rem"}}/>
       <p style={{textAlign:"center", fontSize:"1.2rem"}}>You have not made any transactions yet.</p>
     </div>
   )
