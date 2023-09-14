@@ -4,6 +4,10 @@ import Search from 'antd/es/input/Search';
 import { parse, unparse } from 'papaparse';
 import { toast } from 'react-toastify';
 
+const styling = {
+    display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', marginBottom: '1rem',
+}
+
 function TransactionTable({ transactions, addTransaction }) {
     const { Option } = Select;
     const [search, setSearch] = useState("");
@@ -70,14 +74,14 @@ function TransactionTable({ transactions, addTransaction }) {
 
     function importFromCsv(event) {
         event.preventDefault();
-        try{
+        try {
             parse(event.target.files[0], {
                 header: true,
                 complete: async function (results) {
-                    
+
                     console.log("RESULTS>>>", results)
                     //Now results.data is an array of objects representing your CSV rows
-                    for(const transaction of results.data){
+                    for (const transaction of results.data) {
                         //Write each transaction to firebase, you can use the addTransaction function here
                         console.log("Transactions", transaction);
                         const newTransaction = {
@@ -90,16 +94,16 @@ function TransactionTable({ transactions, addTransaction }) {
             })
             event.target.files = null;
         }
-        catch (e){
+        catch (e) {
             toast.error(e.message);
         }
     }
 
     return (
-        <div style={{ width: "95%", padding: "0rem 2rem" }}>
-            <div style={{
-                display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', marginBottom: '1rem',
-            }}>
+        <div style={{ width: "95%", padding: "0rem 2rem" }} className='table-content'>
+            <h3 style={{textAlign:"center", margin:"20px"}}>My Transactions</h3>
+
+            <div style={styling}>
                 <div className='input-flex'>
                     <img src='' width="16" />
                     <input placeholder="Search By Name..." value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -115,12 +119,8 @@ function TransactionTable({ transactions, addTransaction }) {
                     <Option value="expense">Expense</Option>
                 </Select>
             </div>
-            <div style={{
-                display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', marginBottom: '1rem',
-            }}>
-                <div>
-                    <h3>My Transactions</h3>
-                </div>
+
+            <div style={styling} className='table-data'>
                 <div>
                     <Radio.Group
                         className='input-radio'
@@ -133,9 +133,7 @@ function TransactionTable({ transactions, addTransaction }) {
                     </Radio.Group>
                 </div>
 
-                <div style={{
-                    display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', marginBottom: '1rem',
-                }}>
+                <div style={styling}>
                     <button className='btn' onClick={exportToCsv}>
                         Export To CSV
                     </button>
@@ -152,7 +150,9 @@ function TransactionTable({ transactions, addTransaction }) {
                     />
                 </div>
             </div>
-            <Table dataSource={sortedData} columns={columns} />
+            <div className='main-table'>
+                <Table dataSource={sortedData} columns={columns} />
+            </div>
         </div>
     )
 }

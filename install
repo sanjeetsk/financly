@@ -1,3 +1,4 @@
 npm i moment
 npm install antd
 npm install papaparse
+npm i @ant-design/charts

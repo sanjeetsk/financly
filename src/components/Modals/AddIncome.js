@@ -84,7 +84,7 @@ function AddIncome({
                     </Select> 
                 </Form.Item>
 
-                <Button type='primary' htmlType='submit'>AddExpense</Button>
+                <Button type='primary' htmlType='submit'>Add Income</Button>
             </Form>
 
         </Modal>

@@ -8,3 +8,7 @@
     font-size: 0.8rem;
 }
 
+.ant-input, input#date{
+    font-size: 1.2rem;
+    padding: 0rem .5rem;
+}

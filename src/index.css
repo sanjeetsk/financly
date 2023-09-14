@@ -5,9 +5,13 @@
   --white: #fff;
   --shadow: 0px 0px 30px 8px rgba(227, 227, 227, 0.75);
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body{
-  margin: 0;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-smoothing: grayscale;
@@ -71,4 +75,82 @@ input{
 
 .select-input >div{
   border: 0px solid #fff !important;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.chart-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: auto; 
+}
+
+.graph{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 65vw;
+  /* min-width: 360px; */
+  justify-content: center;
+  box-shadow: var(--shadow); 
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 1.5rem;
+}
+
+.pie-chart{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 30vw;
+  /* min-width: 360px; */
+  justify-content: center;
+  box-shadow: var(--shadow); 
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 1.5rem;
+}
+
+.ant-table-wrapper{
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 780px) {
+  .chart-wrapper {
+    flex-direction: column; /* Change to a column layout on smaller screens */
+  }
+  .graph{
+    width: 480px;
+  }
+  .pie-chart{
+    width: 480px;
+  }
+  .table-data{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .main-table{
+    max-width: 100%; /* Set a maximum width for the container */
+    overflow-x: auto;
+    table-layout: fixed;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .graph{
+    width: 360px;
+  }
+  .pie-chart{
+    width: 360px;
+  }
 }
