@@ -26,7 +26,6 @@ const SignUpLogin = () => {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log("user created >>", user);
           toast.success("success")
           setLoading(false);
           setFullName("");
@@ -34,7 +33,7 @@ const SignUpLogin = () => {
           setPassword("");
           setCpassword("");
           createDoc(user);
-          setTimeout((() => setLoginForm(true)), 1500)
+          setLoginForm(true);
           // ...
         })
         .catch((error) => {
@@ -87,14 +86,12 @@ const SignUpLogin = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log('user loggedin>>', user)
           toast.success("User Logged In");
           setLoading(false);
           setTimeout((() => navigate('/dashboard')), 1500);
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           toast.error(errorMessage);
           setLoading(false);
@@ -167,7 +164,7 @@ const SignUpLogin = () => {
             <p style={{ textAlign: "center", margin: "0px", padding: "0px" }}>or</p>
             <Button text={"Login Using Google"} blue={"blue"} onClick={handleGoogleLogin} />
             <p className='p-login'>Or Don't Have An Account?
-              <span onClick={() => setLoginForm(!loginForm)} style={{ color: "var(--theme)", cursor: "pointer" }}>
+              <span onClick={() => setLoginForm(false)} style={{ color: "var(--theme)", cursor: "pointer" }}>
                 Click Here
               </span>
             </p>
@@ -209,7 +206,7 @@ const SignUpLogin = () => {
             <p style={{ textAlign: "center", margin: "0px", padding: "0px" }}>or</p>
             <Button text={"SignUp Using Google"} blue={"blue"} onClick={handleGoogleLogin} />
             <p className='p-login'>Or Already Have An Account?
-              <span onClick={() => setLoginForm(!loginForm)} style={{ color: "var(--theme)", cursor: "pointer" }}>
+              <span onClick={() => setLoginForm(true)} style={{ color: "var(--theme)", cursor: "pointer" }}>
                 Click Here
               </span>
             </p>

@@ -11,7 +11,7 @@ function NoTransaction() {
         flexDirection:"column",
         marginBottom:"2rem"
     }}>
-      <img src={nodata} style={{width:"400px", margin:"4rem"}}/>
+      <img src={nodata} style={{width:"250px", margin:"2rem"}}/>
       <p style={{textAlign:"center", fontSize:"1.2rem"}}>You have not made any transactions yet.</p>
     </div>
   )

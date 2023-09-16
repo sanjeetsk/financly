@@ -12,10 +12,10 @@ function Header() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (user) {
+        if (!loading && user) {
             navigate('/dashboard');
         }
-    }, [user, loading]);
+    }, [user,loading,navigate]);
 
     function handleLogout() {
         try {
