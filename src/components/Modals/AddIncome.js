@@ -78,9 +78,11 @@ function AddIncome({
                     ]}
                 >
                     <Select className='select-input-2'>
-                        <Select.Option value="Salary">Salary</Select.Option>
                         <Select.Option value="Freelance">Freelance</Select.Option>
-                        <Select.Option value="Investment">Investment</Select.Option>        
+                        <Select.Option value="Gifts">Gifts</Select.Option>
+                        <Select.Option value="Investment">Investment</Select.Option>    
+                        <Select.Option value="Rental">Rental</Select.Option>
+                        <Select.Option value="Salary">Salary</Select.Option>
                     </Select> 
                 </Form.Item>
 

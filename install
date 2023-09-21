@@ -1,4 +1,8 @@
-
+npx create-react-app
+npm i react-router-dom
+npm install firebase
 npm install antd
 npm install papaparse
 npm i @ant-design/plots
+npm i react-firebase-hooks
+npm i react-toastify

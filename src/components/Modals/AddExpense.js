@@ -78,8 +78,10 @@ function AddExpense({
                     ]}
                 >
                     <Select className='select-input-2'>
-                        <Select.Option value="Food">Food</Select.Option>
+                        <Select.Option value="bills">Bills</Select.Option>
+                        <Select.Option value="clothings">Clothings</Select.Option>
                         <Select.Option value="Education">Education</Select.Option>
+                        <Select.Option value="Food">Food</Select.Option>
                         <Select.Option value="Office">Office</Select.Option>        
                     </Select> 
                 </Form.Item>
