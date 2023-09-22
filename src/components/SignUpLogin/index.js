@@ -116,7 +116,6 @@ const SignUpLogin = () => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         // ...
-        console.log("user created >>", user);
         toast.success("success")
         setLoading(false);
         createDoc(user);

@@ -64,7 +64,7 @@ function Dashboard() {
         collection(db, `users/${user.uid}/transactions`),
         transaction
       );
-      console.log('Document written with ID: ', docRef.id)
+      // console.log('Document written with ID: ', docRef.id)
       if(!many) toast.success("Transaction Added!");
       let newArray = transactions;
       newArray.push(transaction);

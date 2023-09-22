@@ -111,6 +111,7 @@ input{
   text-align: center;
   width: 30vw;
   /* min-width: 360px; */
+  height: 72vh;
   justify-content: center;
   box-shadow: var(--shadow); 
   border-radius: 0.5rem;

@@ -30,19 +30,28 @@ function ChartComponent({ sortedTransactions }) {
     // console.log("Spending Data >>>",finalSpendings);
 
     let newSpendings = [
-        { tag: "Food", amount: 0 },
+        { tag: "Clothings", amount: 0 },
+        { tag: "Bills", amount: 0 },
         { tag: "Education", amount: 0 },
+        { tag: "Food", amount: 0 },
         { tag: "Office", amount: 0 },
+
     ]
     spendingData.forEach((item) => {
-        if (item.tag === "Food") {
+        if (item.tag === "Clothings") {
             newSpendings[0].amount += item.amount;
         }
-        else if (item.tag === "Education") {
+        else if (item.tag === "Bills") {
             newSpendings[1].amount += item.amount;
         }
-        else {
+        else if (item.tag === "Education") {
             newSpendings[2].amount += item.amount;
+        }
+        else if (item.tag === "Food") {
+            newSpendings[3].amount += item.amount;
+        }
+        else {
+            newSpendings[4].amount += item.amount;
         }
 
     })
@@ -75,11 +84,11 @@ function ChartComponent({ sortedTransactions }) {
     return (
         <div className='chart-wrapper'>
             <div className='graph'>
-                <h3>Your Analytics</h3>
+                <h3>My Analytics</h3>
                 <Line {...config} onReady={(chartInstance) => (chart = chartInstance)} />
             </div>
             <div className='pie-chart'>
-                <h3>Your Spendings</h3>
+                <h3>My Spendings</h3>
                 <Pie {...spendingConfig} onReady={(chartInstance) => (pieChart = chartInstance)} />
             </div>
         </div>
