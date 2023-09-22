@@ -113,7 +113,7 @@ function Dashboard() {
         transactionsArray.push(doc.data());
       });
       setTransactions(transactionsArray);
-      toast.success("Transactions Fetch!");
+      // toast.success("Transactions Fetch!");
       // console.log("All Data>>>", transactionsArray);
     }
     setLoading(false);

@@ -22,7 +22,19 @@ const SignUpLogin = () => {
   //Authenticate the user with Email and Password
   function handleEmailSignUp() {
     setLoading(true);
-    if (fullname !== "" && email !== "" && password.length > 6 && cpassword === password) {
+    if(email === '' || email.indexOf('@') === -1 || email.indexOf('.') === -1){
+      toast.error("Please enter valid email!")
+      setLoading(false)
+    }
+    if(password.length < 6){
+      toast.error('Your password must be at least six characters long!')
+      setLoading(false)
+    }
+    if(cpassword !== password) {
+      toast.error("Password and Confirm Password should match!");
+      setLoading(false);
+    }
+    else if (fullname !== "" && email !== "" && password.length >= 6 && cpassword === password) {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
